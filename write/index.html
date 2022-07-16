@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Writing and managing content in Ghost, an advanced guide</title>
+    <link rel="stylesheet" href="/assets/built/screen.css?v=5d59ef4040">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
+
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="canonical" href="http://localhost:2368/write/" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <link rel="amphtml" href="http://localhost:2368/write/amp/" />
+    
+    <meta property="og:site_name" content="Stuff and Things" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Writing and managing content in Ghost, an advanced guide" />
+    <meta property="og:description" content="A full overview of all the features built into the Ghost editor, including powerful workflow automations to speed up your creative process." />
+    <meta property="og:url" content="http://localhost:2368/write/" />
+    <meta property="og:image" content="https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png" />
+    <meta property="article:published_time" content="2021-11-04T01:31:26.000Z" />
+    <meta property="article:modified_time" content="2021-11-04T01:31:23.000Z" />
+    <meta property="article:tag" content="Getting Started" />
+    
+    <meta property="article:author" content="https://www.facebook.com/ghost" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Writing and managing content in Ghost, an advanced guide" />
+    <meta name="twitter:description" content="A full overview of all the features built into the Ghost editor, including powerful workflow automations to speed up your creative process." />
+    <meta name="twitter:url" content="http://localhost:2368/write/" />
+    <meta name="twitter:image" content="https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png" />
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Ghost" />
+    <meta name="twitter:label2" content="Filed under" />
+    <meta name="twitter:data2" content="Getting Started" />
+    <meta name="twitter:site" content="@nberdy" />
+    <meta name="twitter:creator" content="ghost" />
+    <meta property="og:image:width" content="2000" />
+    <meta property="og:image:height" content="1216" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Stuff and Things",
+        "url": "http://localhost:2368/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/content/images/2021/11/NB-script-png2.png"
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Ghost",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://static.ghost.org/v4.0.0/images/ghost-user.png",
+            "width": 400,
+            "height": 400
+        },
+        "url": "http://localhost:2368/author/ghost/",
+        "sameAs": [
+            "https://ghost.org",
+            "https://www.facebook.com/ghost",
+            "https://twitter.com/ghost"
+        ]
+    },
+    "headline": "Writing and managing content in Ghost, an advanced guide",
+    "url": "http://localhost:2368/write/",
+    "datePublished": "2021-11-04T01:31:26.000Z",
+    "dateModified": "2021-11-04T01:31:23.000Z",
+    "image": {
+        "@type": "ImageObject",
+        "url": "https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png",
+        "width": 2000,
+        "height": 1216
+    },
+    "keywords": "Getting Started",
+    "description": "A full overview of all the features built into the Ghost editor, including powerful workflow automations to speed up your creative process.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 4.21" />
+    <link rel="alternate" type="application/rss+xml" title="Stuff and Things" href="http://localhost:2368/rss/" />
+    <script defer src="https://unpkg.com/@tryghost/portal@~1.12.0/umd/portal.min.js" data-ghost="http://localhost:2368/" crossorigin="anonymous"></script><style id="gh-members-styles">.gh-post-upgrade-cta-content,
+.gh-post-upgrade-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    width: 100%;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.gh-post-upgrade-cta-content {
+    border-radius: 8px;
+    padding: 40px 4vw;
+}
+
+.gh-post-upgrade-cta h2 {
+    color: #ffffff;
+    font-size: 28px;
+    letter-spacing: -0.2px;
+    margin: 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta p {
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+.gh-post-upgrade-cta small {
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.gh-post-upgrade-cta a {
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a:hover {
+    color: #ffffff;
+    opacity: 0.8;
+    box-shadow: none;
+    text-decoration: underline;
+}
+
+.gh-post-upgrade-cta a.gh-btn {
+    display: block;
+    background: #ffffff;
+    text-decoration: none;
+    margin: 28px 0 0;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.gh-post-upgrade-cta a.gh-btn:hover {
+    opacity: 0.92;
+}</style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NM307K7XWH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NM307K7XWH');
+</script><style>:root {--ghost-accent-color: #800080;}</style>
+</head>
+
+<body class="post-template tag-getting-started with-alt-header">
+    <div class="site">
+        <header id="site-header" class="site-header">
+    <div class="header-inner">
+        <div class="header-brand">
+            <a class="logo" href="http://localhost:2368">
+                    <img class="logo-image" src="http://localhost:2368/content/images/2021/11/NB-script-png2.png" alt="Stuff and Things">
+            </a>
+
+            <div class="burger">
+                <div class="burger-bar"></div>
+                <div class="burger-bar"></div>
+            </div>
+        </div>
+
+        <nav class="header-nav">
+                        <a class="menu-item menu-item-home" href="http://localhost:2368/">Home</a>
+        <a class="menu-item menu-item-about" href="http://localhost:2368/about/">About</a>
+        <a class="menu-item menu-item-poetry" href="http://localhost:2368/tag/poem/">Poetry</a>
+        <a class="menu-item menu-item-author" href="http://localhost:2368/author/ghost/">Author</a>
+        <a class="menu-item menu-item-portal" href="http://localhost:2368/portal/">Portal</a>
+
+        </nav>
+
+        <div class="header-actions">
+            <div class="social">
+
+                    <a class="social-item social-item-twitter"
+                        href="https://twitter.com/nberdy" target="_blank"
+                        rel="noopener noreferrer" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>                    </a>
+            </div>
+
+                <button class="button-text menu-item members-login" data-portal="signin">Login</button>
+        </div>
+    </div>
+</header>
+
+        <div class="site-content">
+            
+<div class="content-area">
+    <main class="site-main">
+            <article class="single post tag-getting-started">
+    <header class="single-header kg-canvas">
+            <div class="single-meta">
+                <span class="single-meta-item single-meta-date">
+                    <time datetime="2021-11-03">
+                        Nov 3, 2021
+                    </time>
+                </span>
+
+                <span class="single-meta-item single-meta-length">
+                    5 min read
+                </span>
+
+                    <span class="single-meta-item single-meta-tag">
+                        <a class="post-tag post-tag-getting-started" href="/tag/getting-started/">Getting Started</a>
+                    </span>
+            </div>
+
+        <h1 class="single-title">Writing and managing content in Ghost, an advanced guide</h1>
+
+            <div class="single-excerpt">
+                A full overview of all the features built into the Ghost editor, including powerful workflow automations to speed up your creative process.
+            </div>
+
+                <figure class="single-media kg-width-wide">
+                    <img srcset="https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png 400w,
+https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png 750w,
+https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png 960w,
+https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png 1140w" sizes="(min-width: 1023px) 920px, calc(90vw)" src="https://static.ghost.org/v4.0.0/images/writing-posts-with-ghost.png" alt="Writing and managing content in Ghost, an advanced guide">
+                </figure>
+    </header>
+
+    <div class="single-content kg-canvas u-text-format">
+        <p>Ghost comes with a best-in-class editor which does its very best to get out of the way, and let you focus on your content. Don't let its minimal looks fool you, though, beneath the surface lies a powerful editing toolset designed to accommodate the extensive needs of modern creators.</p><p>For many, the base canvas of the Ghost editor will feel familiar. You can start writing as you would expect, highlight content to access the toolbar you would expect, and generally use all of the keyboard shortcuts you would expect.</p><p>Our main focus in building the Ghost editor is to try and make as many things that you hope/expect might work: actually work. </p><ul><li>You can copy and paste raw content from web pages, and Ghost will do its best to correctly preserve the formatting. </li><li>Pasting an image from your clipboard will upload inline.</li><li>Pasting a social media URL will automatically create an embed.</li><li>Highlight a word in the editor and paste a URL from your clipboard on top: Ghost will turn it into a link.</li><li>You can also paste (or write!) Markdown and Ghost will usually be able to auto-convert it into fully editable, formatted content.</li></ul><figure class="kg-card kg-image-card kg-width-wide kg-card-hascaption"><img src="https://static.ghost.org/v4.0.0/images/editor.png" class="kg-image" alt loading="lazy" width="3182" height="1500"><figcaption>The Ghost editor. Also available in dark-mode, for late night writing sessions.</figcaption></figure><p>The goal, as much as possible, is for things to work so that you don't have to <em>think</em> so much about the editor. You won't find any disastrous "block builders" here, where you have to open 6 submenus and choose from 18 different but identical alignment options. That's not what Ghost is about.</p><p>What you will find though, is dynamic cards which allow you to embed rich media into your posts and create beautifully laid out stories.</p><h2 id="using-cards">Using cards</h2><p>You can insert dynamic cards inside post content using the <code>+</code> button, which appears on new lines, or by typing <code>/</code> on a new line to trigger the card menu. Many of the choices are simple and intuitive, like bookmark cards, which allow you to create rich links with embedded structured data:</p><figure class="kg-card kg-bookmark-card"><a class="kg-bookmark-container" href="https://opensubscriptionplatforms.com/"><div class="kg-bookmark-content"><div class="kg-bookmark-title">Open Subscription Platforms</div><div class="kg-bookmark-description">A shared movement for independent subscription data.</div><div class="kg-bookmark-metadata"><img class="kg-bookmark-icon" src="https://opensubscriptionplatforms.com/images/favicon.png" alt=""><span class="kg-bookmark-author">Open Subscription Platforms</span></div></div><div class="kg-bookmark-thumbnail"><img src="https://opensubscriptionplatforms.com/images/osp-card.png" alt=""></div></a></figure><p>or embed cards which make it easy to insert content you want to share with your audience, from external services:</p><figure class="kg-card kg-embed-card"><iframe width="200" height="113" src="https://www.youtube.com/embed/hmH3XMlms8E?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></figure><p>But, dig a little deeper, and you'll also find more advanced cards, like one that only shows up in email newsletters (great for personalized introductions) and a comprehensive set of specialized cards for different types of images and galleries.</p><blockquote>Once you  start mixing text and image cards creatively, the whole narrative of the story changes. Suddenly, you're working in a new format.</blockquote><figure class="kg-card kg-image-card kg-width-full"><img src="https://static.ghost.org/v4.0.0/images/andreas-selter-xSMqGH7gi6o-unsplash.jpg" class="kg-image" alt loading="lazy" width="6000" height="4000"></figure><p>As it turns out, sometimes pictures and a thousand words go together really well. Telling people a great story often has much more impact if they can feel, even for a moment, as though they were right there with you.</p><figure class="kg-card kg-gallery-card kg-width-wide"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://static.ghost.org/v4.0.0/images/andreas-selter-e4yK8QQlZa0-unsplash.jpg" width="4572" height="3048" loading="lazy" alt></div><div class="kg-gallery-image"><img src="https://static.ghost.org/v4.0.0/images/steve-carter-Ixp4YhCKZkI-unsplash.jpg" width="4032" height="2268" loading="lazy" alt></div></div></div></figure><figure class="kg-card kg-image-card kg-width-wide"><img src="https://static.ghost.org/v4.0.0/images/lukasz-szmigiel-jFCViYFYcus-unsplash.jpg" class="kg-image" alt loading="lazy" width="2560" height="1705"></figure><figure class="kg-card kg-gallery-card kg-width-wide kg-card-hascaption"><div class="kg-gallery-container"><div class="kg-gallery-row"><div class="kg-gallery-image"><img src="https://static.ghost.org/v4.0.0/images/jd-mason-hPiEFq6-Eto-unsplash.jpg" width="5184" height="3888" loading="lazy" alt></div><div class="kg-gallery-image"><img src="https://static.ghost.org/v4.0.0/images/jp-valery-OBpOP9GVH9U-unsplash.jpg" width="5472" height="3648" loading="lazy" alt></div></div></div><figcaption>Peaceful places</figcaption></figure><p>Galleries and image cards can be combined in so many different ways — the only limit is your imagination.</p><h2 id="build-workflows-with-snippets">Build workflows with snippets</h2><p>One of the most powerful features of the Ghost editor is the ability to create and re-use content snippets. If you've ever used an email client with a concept of <em>saved replies</em> then this will be immediately intuitive.</p><p>To create a snippet, select a piece of content in the editor that you'd like to re-use in future, then click on the snippet icon in the toolbar. Give your snippet a name, and you're all done. Now your snippet will be available from within the card menu, or you can search for it directly using the <code>/</code> command.</p><p>This works really well for saving images you might want to use often, like a company logo or team photo, links to resources you find yourself often linking to, or introductions and passages that you want to remember.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="https://static.ghost.org/v4.0.0/images/createsnippet.png" class="kg-image" alt loading="lazy" width="2282" height="1272"></figure><p>You can even build entire post templates or outlines to create a quick, re-usable workflow for publishing over time. Or build custom design elements for your post with an HTML card, and use a snippet to insert it.</p><p>Once you get a few useful snippets set up, it's difficult to go back to the old way of diving through media libraries and trawling for that one thing you know you used somewhere that one time.</p><hr><h2 id="publishing-and-newsletters-the-easy-way">Publishing and newsletters the easy way</h2><p>When you're ready to publish, Ghost makes it as simple as possible to deliver your new post to all your existing members. Just hit the <em>Preview</em> link and you'll get a chance to see what your content looks like on Web, Mobile, Email and Social.</p><figure class="kg-card kg-image-card kg-width-wide"><img src="https://static.ghost.org/v4.0.0/images/preview.png" class="kg-image" alt loading="lazy" width="3166" height="2224"></figure><p>You can send yourself a test newsletter to make sure everything looks good in your email client, and then hit the <em>Publish</em> button to decide who to deliver it to.</p><p>Ghost comes with a streamlined, optimized email newsletter template that has settings built-in for you to customize the colors and typography. We've spent countless hours refining the template to make sure it works great across all email clients, and performs well for email deliverability.</p><p>So, you don't need to fight the awful process of building a custom email template from scratch. It's all done already!</p><hr><p>The Ghost editor is powerful enough to do whatever you want it to do. With a little exploration, you'll be up and running in no time.</p>
+    </div>
+
+        <footer class="single-footer container small">
+            <div class="single-footer-left">
+                    <div class="navigation navigation-previous">
+                        <a class="navigation-link" href="/portal/" aria-label="Previous post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M26.667 14.667v2.667h-16L18 24.667l-1.893 1.893L5.547 16l10.56-10.56L18 7.333l-7.333 7.333h16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+
+            <div class="single-footer-middle">
+                <div class="single-footer-top">
+                    <h3 class="single-footer-title">Published by:</h3>
+                    <div class="author-list">
+                            <div class="author-image-placeholder u-placeholder square">
+                                <a href="/author/ghost/" title="Ghost">
+                                    <img class="author-image u-object-fit" src="https://static.ghost.org/v4.0.0/images/ghost-user.png" alt="Ghost" loading="lazy">
+                                </a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="single-footer-bottom">
+                    <div class="share">
+                        <a class="share-link share-link-facebook"
+                            href="https://www.facebook.com/sharer.php?u=http://localhost:2368/write/"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"/></svg>                            Share
+                        </a>
+                        <a class="share-link share-link-twitter"
+                            href="https://twitter.com/intent/tweet?url=http://localhost:2368/write/&text=Writing%20and%20managing%20content%20in%20Ghost%2C%20an%20advanced%20guide"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>                            Tweet
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="single-footer-right">
+                    <div class="navigation navigation-next">
+                        <a class="navigation-link" href="/design/" aria-label="Next post">
+                            <span class="navigation-icon"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M5.333 14.667v2.667h16L14 24.667l1.893 1.893L26.453 16 15.893 5.44 14 7.333l7.333 7.333h-16z"></path>
+</svg></span>
+                        </a>
+                    </div>
+            </div>
+        </footer>
+</article>                    <section class="related-wrapper">
+            <div class="container small">
+                <h3 class="related-title">You might also like...</h3>
+                <div class="post-feed related-feed">
+                        <article class="feed post" data-month="November 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Nov
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://static.ghost.org/v4.0.0/images/welcome-to-ghost.png 400w,
+https://static.ghost.org/v4.0.0/images/welcome-to-ghost.png 750w,
+https://static.ghost.org/v4.0.0/images/welcome-to-ghost.png 960w,
+https://static.ghost.org/v4.0.0/images/welcome-to-ghost.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://static.ghost.org/v4.0.0/images/welcome-to-ghost.png"
+                alt="Start here for a quick overview of everything you need to know"
+                loading="lazy"
+            >
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Start here for a quick overview of everything you need to know</h2>
+            <div class="feed-excerpt">We've crammed the most important information to help you get started with Ghost into this one post. It's your cheat-sheet to get started, and your shortcut to advanced features.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-11-03">
+                Nov 3, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/welcome/" aria-label="Start here for a quick overview of everything you need to know"></a>
+</article>                        <article class="feed post" data-month="November 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Nov
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://static.ghost.org/v4.0.0/images/publishing-options.png 400w,
+https://static.ghost.org/v4.0.0/images/publishing-options.png 750w,
+https://static.ghost.org/v4.0.0/images/publishing-options.png 960w,
+https://static.ghost.org/v4.0.0/images/publishing-options.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://static.ghost.org/v4.0.0/images/publishing-options.png"
+                alt="Customizing your brand and design settings"
+                loading="lazy"
+            >
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Customizing your brand and design settings</h2>
+            <div class="feed-excerpt">How to tweak a few settings in Ghost to transform your site from a generic template to a custom brand with style and personality.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-11-03">
+                Nov 3, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    3 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/design/" aria-label="Customizing your brand and design settings"></a>
+</article>                        <article class="feed post" data-month="November 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Nov
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://static.ghost.org/v4.0.0/images/creating-a-custom-theme.png 400w,
+https://static.ghost.org/v4.0.0/images/creating-a-custom-theme.png 750w,
+https://static.ghost.org/v4.0.0/images/creating-a-custom-theme.png 960w,
+https://static.ghost.org/v4.0.0/images/creating-a-custom-theme.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://static.ghost.org/v4.0.0/images/creating-a-custom-theme.png"
+                alt="Building your audience with subscriber signups"
+                loading="lazy"
+            >
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Building your audience with subscriber signups</h2>
+            <div class="feed-excerpt">How Ghost allows you to turn anonymous readers into an audience of active subscribers, so you know what's working and what isn't.</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-11-03">
+                Nov 3, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/portal/" aria-label="Building your audience with subscriber signups"></a>
+</article>                        <article class="feed post" data-month="November 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Nov
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://static.ghost.org/v4.0.0/images/organizing-your-content.png 400w,
+https://static.ghost.org/v4.0.0/images/organizing-your-content.png 750w,
+https://static.ghost.org/v4.0.0/images/organizing-your-content.png 960w,
+https://static.ghost.org/v4.0.0/images/organizing-your-content.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://static.ghost.org/v4.0.0/images/organizing-your-content.png"
+                alt="Selling premium memberships with recurring revenue"
+                loading="lazy"
+            >
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">Selling premium memberships with recurring revenue</h2>
+            <div class="feed-excerpt">For creators and aspiring entrepreneurs looking to generate a sustainable recurring revenue stream from their creative work, Ghost has built-in</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-11-03">
+                Nov 3, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-paid">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    1 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/sell/" aria-label="Selling premium memberships with recurring revenue"></a>
+</article>                        <article class="feed post" data-month="November 2021">
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            Nov
+        </div>
+        <div class="feed-calendar-day">
+            03
+        </div>
+    </div>
+    <div class="feed-image u-placeholder rectangle">
+            <img class="u-object-fit"
+                srcset="https://static.ghost.org/v4.0.0/images/admin-settings.png 400w,
+https://static.ghost.org/v4.0.0/images/admin-settings.png 750w,
+https://static.ghost.org/v4.0.0/images/admin-settings.png 960w,
+https://static.ghost.org/v4.0.0/images/admin-settings.png 1140w"
+                sizes="(min-width: 576px) 160px, 90vw"
+                src="https://static.ghost.org/v4.0.0/images/admin-settings.png"
+                alt="How to grow your business around an audience"
+                loading="lazy"
+            >
+    </div>
+    <div class="feed-wrapper">
+        <h2 class="feed-title">How to grow your business around an audience</h2>
+            <div class="feed-excerpt">A guide to collaborating with other staff users to publish, and some resources to help you with the next steps of growing your business</div>
+        <div class="feed-right">
+            <time class="feed-date" datetime="2021-11-03">
+                Nov 3, 2021
+            </time>
+            <div class="feed-visibility feed-visibility-public">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M16 23.027L24.24 28l-2.187-9.373 7.28-6.307-9.587-.827-3.747-8.827-3.747 8.827-9.587.827 7.267 6.307L7.759 28l8.24-4.973z"></path>
+</svg>            </div>
+                <div class="feed-length">
+                    2 min read
+                </div>
+            <div class="feed-icon">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+    <path d="M11.453 22.107L17.56 16l-6.107-6.12L13.333 8l8 8-8 8-1.88-1.893z"></path>
+</svg>            </div>
+        </div>
+    </div>
+    <a class="u-permalink" href="/grow/" aria-label="How to grow your business around an audience"></a>
+</article>                </div>
+            </div>
+        </section>
+                </main>
+</div>
+
+
+        </div>
+
+        <footer class="site-footer container">
+    <div class="footer-inner">
+        <div class="footer-left">
+            <div class="copyright">
+                Stuff and Things © 2022
+            </div>
+        </div>
+
+        <nav class="footer-nav">
+                    <a class="menu-item menu-item-data-privacy" href="http://localhost:2368/privacy/">Data &amp; privacy</a>
+        <span class="sep">•</span>
+        <a class="menu-item menu-item-contact" href="http://localhost:2368/contact/">Contact</a>
+        <span class="sep">•</span>
+        <a class="menu-item menu-item-contribute" href="http://localhost:2368/contribute/">Contribute →</a>
+        <span class="sep">•</span>
+
+            <a class="menu-item badge" href="https://ghost.org/" target="_blank" rel="noopener noreferrer">Published with Ghost</a>
+        </nav>
+
+        <div class="footer-right">
+            <div class="social">
+
+                    <a class="social-item social-item-twitter"
+                        href="https://twitter.com/nberdy" target="_blank"
+                        rel="noopener noreferrer" aria-label="Twitter">
+                        <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"/></svg>                    </a>
+            </div>
+        </div>
+    </div>
+</footer>        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe.
+        It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides.
+          PhotoSwipe keeps only 3 of them in the DOM to save memory.
+          Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+
+    <script>
+        if (document.body.classList.contains('with-full-cover') && (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform))) {
+            document.getElementsByClassName('cover')[0].style.height = window.innerHeight + 'px';
+        }
+    </script>
+
+    <script>
+        var feed = document.querySelector('.post-feed');
+        if (feed && !feed.classList.contains('related-feed')) {
+            var wrapper = document.querySelector('.feed-layout');
+            var feedLayout = localStorage.getItem('edition_layout');
+            switch (feedLayout) {
+                case 'compact':
+                    wrapper.classList.remove('expanded');
+                    feed.classList.remove('expanded');
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+    <script src="/assets/built/main.min.js?v=5d59ef4040"></script>
+
+    
+</body>
+
+</html>
